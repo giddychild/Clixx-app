@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .collapsible {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active,
+    .collapsible:hover {
+      background-color: #555;
+    }
+
+    .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <label style="width:300px;height:100px;border:1px solid;">
+    <h1>AWS Services:</h1>
+  </label>
+
+
+  <p>
+  <h3>Select all required AWS Services from the list below:</h3>
+  </p>
+
+  <form action="file:///C:/Users/seyio/Desktop/python_files/Clixx/3_design_document.html" method="post">
+  <button type="button" class="collapsible">COMPUTE</button>
+  <div class="content">
+    
+    <fieldset>
+      <legend>Please select all Services that will be built:</legend>
+      <input type="checkbox" name="action" value="ec2" /> EC2<br />
+      <input type="checkbox" name="action" value="lambda" /> Lambda<br />
+      <input type="checkbox" name="action" value="beanstalk" /> Elastic Beanstalk<br />
+      <input type="checkbox" name="action" value="lighsail" /> Lightsail<br />
+    </fieldset>
+
+  </div>
+  <br /><br />
+
+  <button type="button" class="collapsible">STORAGE</button>
+  <div class="content">
+    <legend>Please select all Services that will be built:</legend>
+
+    <fieldset>
+      <input type="checkbox" name="action" value="s3" /> S3<br />
+      <input type="checkbox" name="action" value="efs" /> EFS<br />
+      <input type="checkbox" name="action" value="stgwy" /> Storage Gateway<br />
+      <input type="checkbox" name="action" value="s3glacier" /> S3 Glacier<br />
+    </fieldset>
+
+  </div>
+  <br /><br />
+  <button type="button" class="collapsible">NETWORKING & CONTENT DELIVERY</button>
+  <div class="content">
+
+
+    <fieldset>
+      <legend>Please select all Services that will be built:</legend>
+      <input type="checkbox" name="action" value="VPC" /> VPC<br />
+      <input type="checkbox" name="action" value="route53" /> Route 53<br />
+      <input type="checkbox" name="action" value="directconnect" /> Direct Connect<br />
+    </fieldset>
+
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+  <br><br>
+  <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

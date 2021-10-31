@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .collapsible {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active,
+    .collapsible:hover {
+      background-color: #555;
+    }
+
+    .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <label style="width:300px;height:100px;border:1px solid;">
+    <h1>Design Document:</h1>
+  </label>
+
+  <p>
+  <h3>Enter specifics of the AWS Services selected in previous step:</h3>
+  </p>
+
+  <form action="file:///C:/Users/seyio/Desktop/python_files/Clixx/testing.html" method="post">
+    Select Environment:
+    <input type="radio" name="environment" value="uat"> UAT
+    <input type="radio" name="environment" value="dev"> DEV
+    <input type="radio" name="environment" value="prod"> PROD
+    <br /><br />
+
+    <button type="button" class="collapsible">VPC</button>
+    <div class="content">
+      <br />
+      <pre>Name: <input type="text" name="vpcname"> CIDR: <input type="text" name="vpccidr"> Tenancy: <select name="tenancy"><option>default</option><option>dedicated</option></select> DhcpOptions: <select name="dhcp"><option>Route53</option><option>ActiveDirectory</option></select> FlowLogs: <select name="s3"><option>S3</option><option>CloudWatch</option></select> InternetGateway: <select name="igw"><option>Y</option><option>N</option></select>
+      </div>  
+      <br /><br />
+      
+
+      <button type="button" class="collapsible">Subnets</button>
+      <div class="content">
+        <br />
+        <pre>VPCName: <input type="text" name="vpcname"> SubnetName: <input type="text" name="subnetname"> SubnetType: <select name="subnettype"><option>Private</option><option>Public</option></select> SubnetCIDR: <input type="text" name="subnetcidr"> AvailabilityZone: <select name="az"><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option></select>
+        <pre>VPCName: <input type="text" name="vpcname"> SubnetName: <input type="text" name="subnetname"> SubnetType: <select name="subnettype"><option>Private</option><option>Public</option></select> SubnetCIDR: <input type="text" name="subnetcidr"> AvailabilityZone: <select name="az"><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option></select>
+        <pre>VPCName: <input type="text" name="vpcname"> SubnetName: <input type="text" name="subnetname"> SubnetType: <select name="subnettype"><option>Private</option><option>Public</option></select> SubnetCIDR: <input type="text" name="subnetcidr"> AvailabilityZone: <select name="az"><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option></select>
+        <pre>VPCName: <input type="text" name="vpcname"> SubnetName: <input type="text" name="subnetname"> SubnetType: <select name="subnettype"><option>Private</option><option>Public</option></select> SubnetCIDR: <input type="text" name="subnetcidr"> AvailabilityZone: <select name="az"><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option></select>
+    
+      <pre><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=10.0.0.0&mask=16&division=1.0" target="_blank">SUBNET CALCULATOR</a>
+      </div><br /><br />
+       
+      
+      <br /><input type="submit" value="Submit">
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+    </div>
+  </form>
+</body>
+
+</html>
